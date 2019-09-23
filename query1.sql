@@ -1,0 +1,15 @@
+USE test
+GO
+CREATE SCHEMA MIPT
+GO
+CREATE TABLE MIPT.Students
+(
+	Student_id INT NOT NULL,
+	Last_name NVARCHAR(MAX) NULL,
+	First_name NVARCHAR(50) NULL,
+	Middle_name NVARCHAR(50) NULL,
+	[Group] NVARCHAR(4) NULL,
+	Phone NVARCHAR(20) NULL,
+	Birthday DATETIME NULL,
+	PRIMARY KEY (Student_id)
+)
