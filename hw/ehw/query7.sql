@@ -1,4 +1,4 @@
-SELECT TOP(5) Покупатель
-	FROM [test].[MainTable].[Продажи]
-	WHERE Дата < '01.10.1993' AND Дата > '31.08.1993'
+SELECT DISTINCT TOP(5) Покупатель
+	FROM MainTable.Продажи
+	WHERE MONTH(Дата) = 9 AND YEAR(Дата) = YEAR(CURRENT_TIMESTAMP) - 1
 	ORDER BY Покупатель
