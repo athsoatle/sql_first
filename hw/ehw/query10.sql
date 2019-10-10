@@ -1,2 +1,3 @@
-SELECT SUM(Цена * Колво) Сумма
-FROM [test].[MainTable].[Продажи]
+SELECT нДок, SUM(Цена * Колво)
+	FROM MainTable.Продажи
+	GROUP BY нДок
