@@ -1,3 +1,4 @@
-  SELECT DISTINCT Покупатель
-  FROM [test].[MainTable].[Продажи]
-  WHERE Дата > '27.02.1994'
+SELECT DISTINCT Покупатель, Дата
+  FROM MainTable.Продажи
+  WHERE Дата >=DATEADD(WEEK,DATEDIFF(WEEK,0,CURRENT_TIMESTAMP)-1,0)
+  AND Дата < DATEADD(WEEK,DATEDIFF(WEEK,0,CURRENT_TIMESTAMP)  ,0)
