@@ -1,3 +1,23 @@
+use test
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [PassengerId]
+      ,[Survived]
+      ,[Pclass]
+      ,[Name]
+      ,[Sex]
+      ,[Age]
+      ,[SibSp]
+      ,[Parch]
+      ,[Ticket]
+      ,[Fare]
+      ,[Cabin]
+      ,[Embarked]
+  FROM Titanic
+  order by Ticket
+
+  SELECT Ticket, Fare
+  From titanic
+  order by ticket
 --пункт 1
  SELECT COUNT(*) people, SUM(Survived) survived, CAST(SUM(Survived)AS float) / COUNT(*)
 	FROM Titanic
@@ -6,10 +26,9 @@ SELECT Ticket, COUNT(*) people, SUM(Survived) survived, CAST(SUM(Survived)AS flo
 FROM Titanic
 GROUP BY Ticket 
 -- пункт 3
-SELECT Ticket, Sex, Count(*) people, SUM(Survived) survived, CAST(SUM(Survived)AS float) / COUNT(*)
+SELECT Pclass, Sex, Count(*) people, SUM(Survived) survived, CAST(SUM(Survived)AS float) / COUNT(*)
 FROM Titanic
-GROUP BY Ticket, Sex
-ORDER BY Ticket
+GROUP BY Pclass, Sex
 -- пункт 4
 SELECT Embarked, COUNT(*) people, SUM(Survived) survived, CAST(SUM(Survived)AS float) / COUNT(*)
 FROM Titanic
@@ -52,3 +71,4 @@ UNION
 SELECT CAST(SUM(Survived)AS float) / COUNT(*)
 FROM Titanic
 WHERE Name LIKE '%Elizabeth%'
+
