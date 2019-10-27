@@ -1,7 +1,7 @@
 use test
 go
 
---пункт 1
+--РїСѓРЅРєС‚ 1
 
 create table polinom (id int, power int, coeff float)
 insert into polinom values
@@ -54,7 +54,7 @@ insert into polinom values
 (18, 8, 1), (18, 6, 2), (18, 5, -1), (18, 4, 1), (18, 3, 4), (18, 2, 2), (18, 1, 12);
 select *
 from polinom
---пункт 2
+--РїСѓРЅРєС‚ 2
 DECLARE @id INT, @txt NVARCHAR(50)
 SET @id = 1
 SET @txt = ''
@@ -65,11 +65,11 @@ WHERE id = @id
 ORDER BY power DESC
 
 SELECT REVERSE(STUFF(REVERSE(@txt),1,1,''))
---пункт 3
+--РїСѓРЅРєС‚ 3
 SELECT DISTINCT id
 FROM polinom
 WHERE coeff = 0
---пункт 4
+--РїСѓРЅРєС‚ 4
 DECLARE @number float, @id int, @txt nvarchar(50)
 SET @id = 1
 SET @number = 3.5
@@ -81,7 +81,7 @@ WHERE id = @id
 ORDER BY power DESC
 
 SELECT REVERSE(STUFF(REVERSE(@txt),1,1,''))
---пункт 5
+--РїСѓРЅРєС‚ 5
 DECLARE @n INT, @id INT
 SET @n = 2
 SET @id = 1
@@ -90,7 +90,7 @@ SELECT TOP(1) (CASE WHEN power = @n THEN 'YES' ELSE 'NO' END)
 FROM polinom
 WHERE id = @id AND coeff != 0
 ORDER BY power desc
---пункт 6
+--РїСѓРЅРєС‚ 6
 DECLARE @id1 INT, @id2 INT, @txt NVARCHAR(50)
 SET @id1 = 5
 SET @id2 = 6
@@ -105,7 +105,7 @@ WHERE coeff != 0
 ORDER BY power DESC
 
 SELECT REVERSE(STUFF(REVERSE(@txt),1,1,''))
---пункт 7
+--РїСѓРЅРєС‚ 7
 DECLARE @id1 INT, @id2 INT, @txt NVARCHAR(50)
 SET @id1 = 3
 SET @id2 = 4
@@ -123,7 +123,7 @@ WHERE coeff != 0
 ORDER BY pow DESC
 
 SELECT REVERSE(STUFF(REVERSE(@txt),1,1,''))
---пункт 8
+--РїСѓРЅРєС‚ 8
 DECLARE @id INT, @n FLOAT, @txt NVARCHAR(50)
 SET @id = 3
 SET @n = 2.5
@@ -132,7 +132,7 @@ SET @txt = ''
 SELECT SUM(coeff*power(@n,power))
 FROM Polinom
 WHERE id = @id
---пункт 9
+--РїСѓРЅРєС‚ 9
 DECLARE @id INT
 SET @id = 7
 
@@ -144,7 +144,7 @@ FROM(SELECT coeff as c1
 	 (SELECT coeff as c2
 	 FROM polinom
 	 WHERE id = @id and power = 0) AS T2
---пункт 10
+--РїСѓРЅРєС‚ 10
 DECLARE @id INT, @zero INT, @pos INT, @neg INT
 SET @id = 8
 SET @zero = 0
@@ -163,14 +163,14 @@ FROM(SELECT *
 ORDER BY T1.power DESC
 
 SELECT @pos as positive_coeff, @neg as negative_coeff, @zero as zero_coeff
---пункт 11
+--РїСѓРЅРєС‚ 11
 DECLARE @id INT
 SET @id = 9
 
 SELECT CASE WHEN(SELECT COUNT(*)
 				 FROM polinom
 				 WHERE @id = id AND coeff != CAST(coeff as INT)) != 0 THEN 'NO' ELSE 'YES' END
---пункт 12 
+--РїСѓРЅРєС‚ 12 
 DECLARE @id INT
 SET @id = 10
 
@@ -186,7 +186,7 @@ SELECT CASE WHEN(SELECT TOP(1) power
 				FROM polinom
 				WHERE @id = id AND power = 1)
 			END
---пункт 13
+--РїСѓРЅРєС‚ 13
 DECLARE @id INT, @a FLOAT, @b FLOAT, @c FLOAT, @max_pow INT
 SET @id = 14
 SET @a = 0
@@ -217,7 +217,7 @@ SELECT CASE WHEN @max_pow != 2
 			THEN CAST((-@b)/(2*@a) AS nvarchar(5))
 			ELSE (CAST((-@b + sqrt(@b*@b - 4*@a * @c))/(2*@a) AS nvarchar(5))) + ' ' + (CAST((-@b - sqrt(@b*@b - 4*@a * @c))/(2*@a) AS nvarchar(5)))
 			END
---пункт 13
+--РїСѓРЅРєС‚ 13
 
 DECLARE @id INT, @a FLOAT, @b FLOAT, @c FLOAT, @max_pow INT, @D FLOAT
 SET @id = 14
@@ -249,7 +249,7 @@ IF(@max_pow = 2)
 					SELECT 'NO ROOTS'
 	ELSE
 		SELECT 'NOT A 2nd POWER POLYNOMIAL'
---пункт 14
+--РїСѓРЅРєС‚ 14
 DECLARE @id_res INT, @id1 INT, @id2 INT, @txt NVARCHAR(50), @polynomial nvarchar(50)
 SET @txt = ''
 SET @polynomial = ''
@@ -273,7 +273,7 @@ WHERE id = @id_res
 ORDER BY power DESC
 
 SELECT CASE WHEN @txt = @polynomial THEN '1' ELSE '0' END
---пункт 15 divisible/divisor = private => divisible = private * divivsor
+--РїСѓРЅРєС‚ 15 divisible/divisor = private => divisible = private * divivsor
 DECLARE @id_divisible INT, @id_divisor INT, @id_private INT, @txt NVARCHAR(50), @polynomial nvarchar(50)
 SET @txt = ''
 SET @polynomial = ''
